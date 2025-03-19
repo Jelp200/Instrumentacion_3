@@ -10,3 +10,5 @@ Proyectos dentro de la carpeta.
 <ul>
     <li><a href="Proyectos/01 - MCE/00 - MCE.md">Medido de calidad de la energía (Examen 1er Parcial).</a></li>
 </ul>
+
+###### <b><i>Peña Paz Jorge Eduardo | ICE | Electrónica</i></b>
