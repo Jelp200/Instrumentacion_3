@@ -37,3 +37,11 @@ $$ f_{\text{SD5}} = 60 \times 6 = 360 | A_{\text{SD5}} = 12.53V$$
 
 <div><img src="/assets/imgs/01 - MCE/FP_2.png"></div>
 
+Siendo así su resultado el siguiente:
+
+<div><img src="/assets/imgs/01 - MCE/FP_3.png"></div>
+
+En donde puede visualizarse que el panel del analizador de calidad de la energía contiene los siguientes elementos:
+
+<div><img src="/assets/imgs/01 - MCE/FP_4.png"></div>
+
