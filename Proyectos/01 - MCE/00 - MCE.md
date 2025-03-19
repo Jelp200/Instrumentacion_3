@@ -29,7 +29,7 @@ Esto ya que para poder conocer la calidad de la energía se necesita trabajar co
 
 Cómo ejemplo, se trabajarán con los primeros cinco armonicos y amplitudes vistas en la tabla, por lo tanto:
 
-$$ f_{\text{SD1}} = 60 \times 2 = 120 $$
+$$ f_{\text{SD1}} = 60 \times 2 = 120 | A_{\text{SD1}} = 5.37V$$
 $$ f_{\text{SD2}} = 60 \times 3 = 180 $$
 $$ f_{\text{SD3}} = 60 \times 4 = 240 $$
 $$ f_{\text{SD4}} = 60 \times 5 = 300 $$
