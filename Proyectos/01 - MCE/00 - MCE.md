@@ -10,6 +10,6 @@ El siguiente instrumento permite medir la calidad de la energía de una linea de
 
 Es posible observar que el instrumento permite ingresar para cada una de las señales de distorción una frecuencía y amplitud, esto con la finalidad de que se pueda probar la calidad de la señal en diferentes circunstancías, para poder conocer la frecuencía con la cuál trabajará cada una de estas señales de distorción es importante conocer la siguiente formula:
 
-$$ f_{\text{señalDistorsion}} = f_{\text{fundamental}} \times n_{\text{Armonico}} $$
+$$ f_{\text{señalDistorsion}} = f_{\text{fundamental}} \times nArmonico $$
 
 Esto ya que para poder conocer la calidad de la energía se necesita trabajar con armonicos y sus frecuencias respectivas. Las amplitudes las cuales:
