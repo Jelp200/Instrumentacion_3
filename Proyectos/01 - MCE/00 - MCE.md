@@ -45,3 +45,5 @@ En donde puede visualizarse que el panel del analizador de calidad de la energí
 
 <div><img src="/assets/imgs/01 - MCE/FP_4.png"></div>
 
+##### <a href="/README.md">Regresar al apartado anterior.</a>
+##### <a href="/README.md">Siguiente apartado anterior.</a>
