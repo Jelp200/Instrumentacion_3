@@ -12,4 +12,22 @@ Es posible observar que el instrumento permite ingresar para cada una de las se�
 
 $$ f_{\text{señalDistorsion}} = f_{\text{fundamental}} \times nArmonico $$
 
-Esto ya que para poder conocer la calidad de la energía se necesita trabajar con armonicos y sus frecuencias respectivas. Las amplitudes las cuales:
+Esto ya que para poder conocer la calidad de la energía se necesita trabajar con armonicos y sus frecuencias respectivas. Las amplitudes las cuales pueden ser ingresadas están dadas gracias a la siguiente tabla la cual es una relación de porcentajes con el voltaje `RMS` máximo de la señal de línea.
+
+| **_Porcentaje (%)_** | **_Amplitud (V)_** |
+|----------------------|--------------------|
+| 3                    | 5.37               |
+| 4                    | 7.16               |
+| 5                    | 8.95               |
+| 6                    | 10.74              |
+| 7                    | 12.53              |
+| 8                    | 14.32              |
+| 9                    | 16.11              |
+| 10                   | 17.9               |
+| 11                   | 19.69              |
+| 12                   | 21.48              |
+
+Cómo ejemplo, se trabajarán con los primeros cinco armonicos y amplitudes vistas en la tabla, por lo tanto:
+
+<div><img src="/assets/imgs/01 - MCE/FP_2.png"></div>
+
