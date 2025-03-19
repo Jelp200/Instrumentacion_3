@@ -4,6 +4,8 @@
 
 # MEDIDOR DE CALIDAD DE LA ENERGÍA :zap:
 
+## USO DEL INSTRUMENTO
+
 El siguiente instrumento permite medir la calidad de la energía de una linea de tensión de `127VRMS` a `60Hz` tambien denominada `Señal Pura`, la cual está siendo distorsionada por cinco diferentes señales con frecuencías y amplitudes distintas una de la otra `Señales de distorsión` . El panel principal de dicho instrumento es el siguiente:
 
 <div><img src="/assets/imgs/01 - MCE/FP_1.png"></div>
@@ -46,4 +48,4 @@ En donde puede visualizarse que el panel del analizador de calidad de la energí
 <div><img src="/assets/imgs/01 - MCE/FP_4.png"></div>
 
 ##### <a href="/README.md">Regresar al apartado anterior.</a>
-##### <a href="/README.md">Siguiente apartado anterior.</a>
+##### <a href="/README.md">Siguiente apartado.</a>
