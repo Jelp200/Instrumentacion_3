@@ -5,9 +5,9 @@
 El siguiente sistema tiene como objetivo el poder demostrar la aduisción, transmisión y reconstrucción de señales comprimidas utilizando:
 
 - [Demodulación aleatoria (paper "Beyond Nyquist")](Docs/).
-- [Mínimos cuadrados reponderados iterativamente (IRLS)](Docs/).
+- [Mínimos cuadrados reponderados iterativamente (IRLS)](Docs/IRLS.md).
 - [Protocolo de comunicación serial (Modbus)](Docs/).
-- [Visualización y control desde LabVIEW](Docs/).
+- [Visualización y control desde LabVIEW](Docs/VC_LabVIEW.md).
 
 ---
 
@@ -23,10 +23,20 @@ El siguiente sistema tiene como objetivo el poder demostrar la aduisción, trans
 02 - Beyond Nyquist/
 ├── App/
 ├── Codigos/
+|   ├── Prueba/
+|   └── Finales/
 ├── Diagramas/
 ├── Docs/
+|   ├── Papers/
+|   ├── IRLS.md/
+|   └── VC_LabVIEW.md/
 └── Inicio.md/
 ```
+
+- [Aplicación de LabVIEW](App/).
+- [Códigos implementados](Codigos/).
+- [Diagrmas](Diagramas/).
+- [Documentos (papers y teoria)](Docs/).
 
 ---
 
