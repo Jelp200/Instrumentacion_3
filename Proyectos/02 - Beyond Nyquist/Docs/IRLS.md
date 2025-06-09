@@ -4,20 +4,15 @@ El algoritmo IRLS busca **reconstruir una señal escasa (sparse)** a partir de m
 
 ## ¿Qué problema resuelve el algoritmo IRLS?
 
-El objetivo es recuperar un vector escaso:  
-![equation](https://latex.codecogs.com/svg.image?x%20\in%20\mathbb{R}^n),  
-a partir de mediciones comprimidas:  
-![equation](https://latex.codecogs.com/svg.image?y%20\in%20\mathbb{R}^m),  
-donde ![equation](https://latex.codecogs.com/svg.image?m%20<%20n).  
-Esto se formula como un problema de minimización convexa:
+Busca resolver el siguiente problema de minimización convexa:
 
 ![equation](https://latex.codecogs.com/svg.image?\min_{x}%20\|%20x%20\|_1%20\quad%20\text{sujeto%20a}%20\quad%20Ax%20=%20y)
 
+Con el objetivo es recuperar un vector escaso: ![equation](https://latex.codecogs.com/svg.image?x%20\in%20\mathbb{R}^n), a partir de mediciones comprimidas: ![equation](https://latex.codecogs.com/svg.image?y%20\in%20\mathbb{R}^m) donde "![equation](https://latex.codecogs.com/svg.image?m%20<%20n)".  
+
 ### Definiciones
 
-- **Matriz de medición**  
-  ![equation](https://latex.codecogs.com/svg.image?A%20\in%20\mathbb{R}^{m%20\times%20n}):  
-  Matriz no cuadrada (submuestreada) que codifica las restricciones lineales.
+- **Matriz de medición ![equation](https://latex.codecogs.com/svg.image?A%20\in%20\mathbb{R}^{m%20\times%20n})**: Matriz no cuadrada (submuestreada) que codifica las restricciones lineales.
 - **Vector desconocido**  
   ![equation](https://latex.codecogs.com/svg.image?x%20\in%20\mathbb{R}^n):  
   Señal original que se desea reconstruir (con mayoría de componentes cercanos a cero).
