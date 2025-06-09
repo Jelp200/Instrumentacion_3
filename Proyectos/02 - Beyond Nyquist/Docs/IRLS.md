@@ -20,6 +20,10 @@ La norma L1 promueve escasez en la solución, es decir, que muchos elementos de 
 
 ![equation](https://latex.codecogs.com/svg.image?\|%20x%20\|_1%20=%20\sum_{i=1}^n%20|x_i|)
 
+## Relación de IRLS con Beyond Nyquist
+
+$$ f(t) = \sum_{a} a_{w} e^{e-2 \pi \omega t} $$
+
 ## Aplicación en LabVIEW
 
 1. **Adquisición de Datos:** Leer ![equation](https://latex.codecogs.com/svg.image?y) desde Arduino vía protocolo Modbus (usando nodos VISA en LabVIEW).  
