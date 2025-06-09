@@ -1,16 +1,37 @@
-# IRLS Signal Recovery System
+# Beyond Nyquist :microscope:
 
-This project demonstrates how to recover sparse signals sent from an Arduino (via Modbus) to LabVIEW, using IRLS (Iteratively Reweighted Least Squares) in Python.
+![Header](/assets/imgs/02%20-%20BN/header.png)
 
-## Structure
+El siguiente sistema tiene como objetivo el poder demostrar la aduisción, transmisión y reconstrucción de señales comprimidas utilizando:
 
-- `irls.py`: Main Python script with IRLS algorithm and modulation matrix generator.
-- `theory.md`: Description of compressed sensing and IRLS.
-- `formulas.md`: Key formulas.
-- `system.md`: System architecture and LabVIEW integration.
+- [Demodulación aleatoria (paper "Beyond Nyquist")](Docs/).
+- [Mínimos cuadrados reponderados iterativamente (IRLS)](Docs/).
+- [Protocolo de comunicación serial (Modbus)](Docs/).
+- [Visualización y control desde LabVIEW](Docs/).
 
-## How to Use
+---
 
-1. Generate a measurement matrix `A` using a known pseudo-random sequence and sampling indices.
-2. Receive measurement vector `y` from Arduino via Modbus.
-3. Call `irls(A, y)` from a Python Node in LabVIEW.
+## Diagrama general del sistema :building_construction:
+
+![Diagrama](Diagramas/D.png)
+
+---
+
+## Organización de carpetas :file_folder:
+
+```plaintext
+02 - Beyond Nyquist/
+├── App/
+├── Codigos/
+├── Diagramas/
+├── Docs/
+└── Inicio.md/
+```
+
+---
+
+## :shipit: Copiar proyecto
+
+```sh
+git clone https://github.com/Jelp200/Instrumentacion_3.git
+```
