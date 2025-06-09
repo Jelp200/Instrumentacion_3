@@ -4,39 +4,44 @@ El algoritmo IRLS busca **reconstruir una señal escasa (sparse)** a partir de m
 
 ## ¿Qué problema resuelve el algoritmo IRLS?
 
-El objetivo es recuperar un vector escaso \( x \in \mathbb{R}^n \) a partir de mediciones comprimidas \( y \in \mathbb{R}^m \), donde \( m < n \). Esto se formula como un problema de minimización convexa:
+El objetivo es recuperar un vector escaso:  
+![equation](https://latex.codecogs.com/svg.image?x%20\in%20\mathbb{R}^n),  
+a partir de mediciones comprimidas:  
+![equation](https://latex.codecogs.com/svg.image?y%20\in%20\mathbb{R}^m),  
+donde ![equation](https://latex.codecogs.com/svg.image?m%20<%20n).  
+Esto se formula como un problema de minimización convexa:
 
-\[
-\min_{x} \| x \|_1 \quad \text{sujeto a} \quad A x = y
-\]
+![equation](https://latex.codecogs.com/svg.image?\min_{x}%20\|%20x%20\|_1%20\quad%20\text{sujeto%20a}%20\quad%20Ax%20=%20y)
 
 ### Definiciones
 
-- **Matriz de medición** \( A \in \mathbb{R}^{m \times n} \):  
+- **Matriz de medición**  
+  ![equation](https://latex.codecogs.com/svg.image?A%20\in%20\mathbb{R}^{m%20\times%20n}):  
   Matriz no cuadrada (submuestreada) que codifica las restricciones lineales.
-- **Vector desconocido** \( x \in \mathbb{R}^n \):  
+- **Vector desconocido**  
+  ![equation](https://latex.codecogs.com/svg.image?x%20\in%20\mathbb{R}^n):  
   Señal original que se desea reconstruir (con mayoría de componentes cercanos a cero).
-- **Medición observada** \( y \in \mathbb{R}^m \):  
+- **Medición observada**  
+  ![equation](https://latex.codecogs.com/svg.image?y%20\in%20\mathbb{R}^m):  
   Datos recibidos (ej.: tramas Modbus desde Arduino).
 
 ### Norma L1
 
-La norma \( \ell_1 \) promueve escasez en la solución:
-\[
-\| x \|_1 = \sum_{i=1}^n |x_i|
-\]
+La norma L1 promueve escasez en la solución:
+
+![equation](https://latex.codecogs.com/svg.image?\|%20x%20\|_1%20=%20\sum_{i=1}^n%20|x_i|)
 
 ## Aplicación en LabVIEW
 
 1. **Adquisición de Datos**:  
-   Leer \( y \) desde Arduino vía protocolo Modbus (usando nodos VISA en LabVIEW).  
+   Leer ![equation](https://latex.codecogs.com/svg.image?y) desde Arduino vía protocolo Modbus (usando nodos VISA en LabVIEW).  
 2. **Resolución del Problema**:  
    Implementar el algoritmo IRLS (Iteratively Reweighted Least Squares) para resolver:
-   \[
-   x^* = \argmin_{x} \| x \|_1 \quad \text{s.t.} \quad A x = y
-   \]
+
+   ![equation](https://latex.codecogs.com/svg.image?x^*%20=%20\arg\min_{x}%20\|%20x%20\|_1%20\quad%20\text{s.t.}%20\quad%20Ax%20=%20y)
+
 3. **Visualización**:  
-   Graficar \( x^* \) reconstruido en un `Waveform Graph`.
+   Graficar ![equation](https://latex.codecogs.com/svg.image?x^*) reconstruido en un `Waveform Graph`.
 
 ## Ejemplo de Código (Pseudocódigo)
 
@@ -48,6 +53,7 @@ from scipy.optimize import linprog
 # Datos desde Modbus (y) y matriz A predefinida
 y = np.array([...])  # Mediciones
 A = np.array([...])  # Matriz de sensado
+n = A.shape[1]
 
 # Resolver minimización L1 (usando aproximación LP)
 c = np.ones(2 * n)  # Variables: [x⁺, x⁻]
