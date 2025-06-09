@@ -1,14 +1,12 @@
-<div>
-  <img src="assets/imgs/global/header.png"/>
-</div>
-
 # INSTRUMENTACIÓN 3 :toolbox:
+
+![Header](/assets/imgs/global/header.png)
 
 Repositorio digital de la materia de intrumentación 3 de la carrera de ingeniería en electrónica y comunicaciones de la ESIME Z del IPN.
 
-Proyectos dentro de la carpeta.
-<ul>
-    <li><a href="Proyectos/01 - MCE/00 - MCE.md">Medido de calidad de la energía (Examen 1er Parcial).</a></li>
-</ul>
+Proyectos dentro de la carpeta:
 
-###### <b><i>Peña Paz Jorge Eduardo | ICE | Electrónica</i></b>
+- [Medido de calidad de la energía (Examen 1er Parcial).](Proyectos/01%20-%20MCE/00%20-%20MCE.md)
+- [Beyond Nyquist (Proyecto final).](Proyectos/02%20-%20Beyond%20Nyquist/Inicio.md)
+
+## **_Peña Paz Jorge Eduardo | ICE | Electrónica_**
