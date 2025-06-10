@@ -19,17 +19,22 @@ $$\mathbf{y \in \mathbb{R}^{n}} \hspace{0.2cm}donde\hspace{0.2cm} \mathbf{m< n}$
 ### Definiciones
 
 - **Matriz de medición:** Matriz no cuadrada (submuestreada) que codifica las restricciones lineales.
+
 $$\mathbf{A \in \mathbb{R}^{m \times n}}$$
+
 - **Vector desconocido:** Señal original que se desea reconstruir (con mayoría de componentes cercanos a cero).
+
 $$\mathbf{x \in \mathbb{R}^{n}}$$
+
 - **Medición observada:** Datos recibidos (tramas Modbus desde Arduino).
+
 $$\mathbf{y \in \mathbb{R}^{m}}$$
 
 ### Norma L1
 
-La norma L1 promueve escasez en la solución, es decir, que muchos elementos de `x` sean **exactamente cero**. Esto es útil si se sabe que la señal en naturalmente escasa:
+La norma L1 promueve escasez en la solución, es decir, que muchos elementos de `x` sean **exactamente cero**. Esto es útil si se sabe que la señal es naturalmente escasa:
 
-![equation](https://latex.codecogs.com/svg.image?\|%20x%20\|_1%20=%20\sum_{i=1}^n%20|x_i|)
+$$\mathbf{\left | x \right |_{1} = \sum_{n}^{i = 1} \left | x_{i} \right |}$$
 
 ## Relación de IRLS con Beyond Nyquist
 
