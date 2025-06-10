@@ -10,13 +10,16 @@ $$ \mathbf{\underset{x}{min} \left | x \right |_{1}}\hspace{0.2cm}sujeto\hspace{
 
 Con el objetivo es recuperar un vector escaso:
 
-![equation](https://latex.codecogs.com/svg.image?x%20\in%20\mathbb{R}^n)
+$$\mathbf{x \in \mathbb{R}^{n}}$$
 
-A partir de mediciones comprimidas: ![equation](https://latex.codecogs.com/svg.image?y%20\in%20\mathbb{R}^m) donde "![equation](https://latex.codecogs.com/svg.image?m%20<%20n)".  
+A partir de mediciones comprimidas:
+
+$$\mathbf{y \in \mathbb{R}^{n}} \hspace{0.2cm}donde\hspace{0.2cm} \mathbf{m< n}$$
 
 ### Definiciones
 
-- **Matriz de medición ![equation](https://latex.codecogs.com/svg.image?A%20\in%20\mathbb{R}^{m%20\times%20n}):** Matriz no cuadrada (submuestreada) que codifica las restricciones lineales.
+- **Matriz de medición:** Matriz no cuadrada (submuestreada) que codifica las restricciones lineales.
+   $$\mathbf{A \in \mathbb{R}^{m \times n}}$$
 - **Vector desconocido ![equation](https://latex.codecogs.com/svg.image?x%20\in%20\mathbb{R}^n):** Señal original que se desea reconstruir (con mayoría de componentes cercanos a cero).
 - **Medición observada ![equation](https://latex.codecogs.com/svg.image?y%20\in%20\mathbb{R}^m):** Datos recibidos (tramas Modbus desde Arduino).
 
