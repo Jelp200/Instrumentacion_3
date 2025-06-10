@@ -4,9 +4,15 @@ El algoritmo IRLS busca **reconstruir una señal escasa (sparse)** a partir de m
 
 ## ¿Qué problema resuelve el algoritmo IRLS?
 
-Busca resolver el siguiente problema de minimización convexa: ![equation](https://latex.codecogs.com/svg.image?\min_{x}%20\|%20x%20\|_1%20\quad%20\text{sujeto%20a}%20\quad%20Ax%20=%20y)
+Busca resolver el siguiente problema de minimización convexa:
 
-Con el objetivo es recuperar un vector escaso: ![equation](https://latex.codecogs.com/svg.image?x%20\in%20\mathbb{R}^n), a partir de mediciones comprimidas: ![equation](https://latex.codecogs.com/svg.image?y%20\in%20\mathbb{R}^m) donde "![equation](https://latex.codecogs.com/svg.image?m%20<%20n)".  
+$$ \mathbf{\underset{x}{min} \left | x \right |_{1}}\hspace{0.2cm}sujeto\hspace{0.2cm}a\hspace{0.2cm} \mathbf{Ax=y} $$
+
+Con el objetivo es recuperar un vector escaso:
+
+![equation](https://latex.codecogs.com/svg.image?x%20\in%20\mathbb{R}^n)
+
+A partir de mediciones comprimidas: ![equation](https://latex.codecogs.com/svg.image?y%20\in%20\mathbb{R}^m) donde "![equation](https://latex.codecogs.com/svg.image?m%20<%20n)".  
 
 ### Definiciones
 
