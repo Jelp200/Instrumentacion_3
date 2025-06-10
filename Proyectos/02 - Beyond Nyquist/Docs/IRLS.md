@@ -34,11 +34,32 @@ $$\mathbf{y \in \mathbb{R}^{m}}$$
 
 La norma L1 promueve escasez en la solución, es decir, que muchos elementos de `x` sean **exactamente cero**. Esto es útil si se sabe que la señal es naturalmente escasa:
 
-$$ \mathbf{\left | x \right |_{1} = \sum_{n}^{i = 1} \left | x_{i} \right |} $$
+![Norma L1](https://latex.codecogs.com/svg.latex?\left%20\|%20x%20\right%20\|_{1}%20=%20\sum_{i=1}^{n}%20\left%20|%20x_{i}%20\right%20|)
 
 ## Relación de IRLS con Beyond Nyquist
 
+El paper de [Beyond Nyquist](Papers/) considera señales de la forma:
+
 $$ f(t) = \sum_{a} a_{w} e^{e-2 \pi \omega t} $$
+
+- Donde la señal es **escasa en frecuencia** (pocos tonos activos).
+- El sistema busca recuperar los coeficientes $$\mathbf{a_{\omega}}$$ a partir de mediciones mucho menores a la de Nyquist.
+
+## Arquitectura de adquisición
+
+Del paper y el [diagrama general del sistema](../Diagramas/D.png), es posible observar que del lado del microcontrolador `uC` se tiene una demodulación aleatoria, la cual.
+
+| **_Paso_** | **_Acción_**                                                                   |
+|------------|--------------------------------------------------------------------------------|
+| 1.         | Multiplica la señal con una **secuencia pseudoaleatoria** de 1, 0 (modulación) |
+| 2.         | Integra la señal en bloques                                                    |
+| 3          | Muestra con ADC                                                                |
+
+Esto implica que la **matriz de medición** `A` debe reflejar esta secuencia de pasos:
+
+$$ \mathbf{ \phi = HDF} $$
+
+![Demodulación aleatoria](../Diagramas/D%20(1).png)
 
 ## Aplicación en LabVIEW
 
