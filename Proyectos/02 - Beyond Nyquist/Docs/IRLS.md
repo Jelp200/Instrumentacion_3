@@ -45,21 +45,37 @@ $$ f(t) = \sum_{a} a_{w} e^{e-2 \pi \omega t} $$
 - Donde la señal es **escasa en frecuencia** (pocos tonos activos).
 - El sistema busca recuperar los coeficientes $$\mathbf{a_{\omega}}$$ a partir de mediciones mucho menores a la de Nyquist.
 
-## Arquitectura de adquisición
+### Arquitectura de adquisición
 
 Del paper y el [diagrama general del sistema](../Diagramas/D.png), es posible observar que del lado del microcontrolador `uC` se tiene una demodulación aleatoria, la cual.
 
 | **_Paso_** | **_Acción_**                                                                   |
 |------------|--------------------------------------------------------------------------------|
-| 1.         | Multiplica la señal con una **secuencia pseudoaleatoria** de 1, 0 (modulación) |
+| 1.         | Multiplica la señal con una **señal pseudoaleatoria** de 1, 0 (modulación) |
 | 2.         | Integra la señal en bloques                                                    |
 | 3          | Muestra con ADC                                                                |
+
+![Demodulación aleatoria](../Diagramas/D%20(1).png)
 
 Esto implica que la **matriz de medición** `A` debe reflejar esta secuencia de pasos:
 
 $$ \mathbf{ \phi = HDF} $$
 
-![Demodulación aleatoria](../Diagramas/D%20(1).png)
+- $$F$$: Matriz de Fourier (base de la señal escasa).
+- $$\mathbf{D=diag({\varepsilon _{0},...,\varepsilon _{W-1}})},\hspace{0.2cm}con\hspace{0.2cm}\mathbf{\varepsilon _{i}\in\left\{ \left. +1, 0\right \}\right.}$$
+- $$H$$: Matriz de acumulación (suma de bloques)
+
+### Matriz del la demodulación aleatoria (Paper Beyond Nyquist)
+
+Dado que ya se conoce que  la **matriz de medición** debe reflejar la secuencia de pasos que se muestra en la figura anterior, y que:
+
+$$ \mathbf{ \phi = HDF} $$
+
+Entonces:
+
+- $$\mathbf{F \in \mathbb{C^{W\times W}}}$$: Matriz de Fourier discreta.
+- $$D$$: Matriz diagonal con 1,0 (señal pseudoaleatoria).
+- $$\mathbf{H\in\mathbb{R^{R\times W}}}$$: Realiza sumas por bloques
 
 ## Aplicación en LabVIEW
 
