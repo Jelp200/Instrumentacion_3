@@ -131,10 +131,12 @@ import numpy as np
 
 #* CONSTRUCCIÓN DE LA MATRIZ 'H' QUE ACUMULA 'W' ELEMENTOS EN R BLOQUES
 def build_accumulator_matrix(W, R):
-    block_size = W // R
+    if R > W:
+        raise ValueError("R no debe ser mayor que W.")
     H = np.zeros((R, W))
+    indices = np.linspace(0, W, R + 1, dtype=int)
     for i in range(R):
-        H[i, i * block_size : (i + 1) * block_size] = 1
+        H[i, indices[i]:indices[i+1]] = 1
     return H
 
 #* generar la matriz 'Φ = H D F' COMO EL MODELO
