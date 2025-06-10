@@ -34,7 +34,7 @@ $$\mathbf{y \in \mathbb{R}^{m}}$$
 
 La norma L1 promueve escasez en la solución, es decir, que muchos elementos de `x` sean **exactamente cero**. Esto es útil si se sabe que la señal es naturalmente escasa:
 
-$$\mathbf{\left | x \right |_{1} = \sum_{n}^{i = 1} \left | x_{i} \right |}$$
+$$ \mathbf{\left | x \right |_{1} = \sum_{n}^{i = 1} \left | x_{i} \right |} $$
 
 ## Relación de IRLS con Beyond Nyquist
 
