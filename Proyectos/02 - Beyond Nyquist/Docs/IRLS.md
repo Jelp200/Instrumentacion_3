@@ -19,10 +19,11 @@ $$\mathbf{y \in \mathbb{R}^{n}} \hspace{0.2cm}donde\hspace{0.2cm} \mathbf{m< n}$
 ### Definiciones
 
 - **Matriz de medición:** Matriz no cuadrada (submuestreada) que codifica las restricciones lineales.
-   $$\mathbf{A \in \mathbb{R}^{m \times n}}$$
+$$\mathbf{A \in \mathbb{R}^{m \times n}}$$
 - **Vector desconocido:** Señal original que se desea reconstruir (con mayoría de componentes cercanos a cero).
-   $$\mathbf{x \in \mathbb{R}^{n}}$$
-- **Medición observada ![equation](https://latex.codecogs.com/svg.image?y%20\in%20\mathbb{R}^m):** Datos recibidos (tramas Modbus desde Arduino).
+$$\mathbf{x \in \mathbb{R}^{n}}$$
+- **Medición observada:** Datos recibidos (tramas Modbus desde Arduino).
+$$\mathbf{y \in \mathbb{R}^{m}}$$
 
 ### Norma L1
 
