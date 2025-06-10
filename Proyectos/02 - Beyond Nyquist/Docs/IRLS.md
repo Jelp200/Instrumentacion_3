@@ -62,7 +62,7 @@ Esto implica que la **matriz de medición** `A` debe reflejar esta secuencia de 
 $$ \mathbf{ \phi = HDF} $$
 
 - $$F$$: Matriz de Fourier (base de la señal escasa).
-- $$\mathbf{D=diag({\varepsilon _{0},...,\varepsilon _{W-1}})},\hspace{0.2cm}con\hspace{0.2cm}\mathbf{\varepsilon _{i}\in\left\{ \left. +1, 0\right \}\right.}$$
+- $$\mathbf{D = \mathrm{diag}(\varepsilon_0, \dots, \varepsilon_{W-1})},\hspace{0.2cm}\text{con }\varepsilon_i \in \left\{ +1,\ 0 \right\}$$
 - $$H$$: Matriz de acumulación (suma de bloques)
 
 ### Matriz del la demodulación aleatoria (Paper Beyond Nyquist)
