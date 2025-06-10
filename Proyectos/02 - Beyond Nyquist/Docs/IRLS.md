@@ -97,7 +97,7 @@ def generate_modulation_matrix(n, m, pseudo_seq=None, sample_indices=None, seed=
         np.random.seed(seed)
 
     if pseudo_seq is None:
-        pseudo_seq = np.random.choice([1, -1], size=n)
+        pseudo_seq = np.random.choice([1, 0], size=n)
 
     mod_matrix = np.diag(pseudo_seq)
 
