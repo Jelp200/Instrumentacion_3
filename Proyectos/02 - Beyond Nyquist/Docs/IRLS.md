@@ -86,27 +86,71 @@ Entonces:
 
 3. **Visualización:** Graficar ![equation](https://latex.codecogs.com/svg.image?x^*) reconstruido en un `Waveform Graph`.
 
-## Ejemplo de Código (Pseudocódigo)
+## Código IRLS
 
 ```python
-# Ejemplo en Python para integración con LabVIEW
 import numpy as np
-from scipy.optimize import linprog
 
-# Datos desde Modbus (y) y matriz A predefinida
-y = np.array([...])  # Mediciones
-A = np.array([...])  # Matriz de sensado
-n = A.shape[1]
+#* GENERA LA MATRIZ DE MODULACIÓN
+def generate_modulation_matrix(n, m, pseudo_seq=None, sample_indices=None, seed=None):
+    if seed is not None:
+        np.random.seed(seed)
 
-# Resolver minimización L1 (usando aproximación LP)
-c = np.ones(2 * n)  # Variables: [x⁺, x⁻]
-A_eq = np.hstack([A, -A])  # Restricción: A(x⁺ - x⁻) = y
-bounds = [(0, None)] * (2 * n)
-result = linprog(c, A_eq=A_eq, b_eq=y, bounds=bounds)
-x_reconstruido = result.x[:n] - result.x[n:]
+    if pseudo_seq is None:
+        pseudo_seq = np.random.choice([1, -1], size=n)
+
+    mod_matrix = np.diag(pseudo_seq)
+
+    if sample_indices is None:
+        sample_indices = np.sort(np.random.choice(np.arange(n), size=m, replace=False))
+
+    A = mod_matrix[sample_indices, :]  # Matrz final m x n
+
+    return A, pseudo_seq, sample_indices
+
+#* ALGORTIMO IRLS
+def irls(A, y, max_iter=50, tol=1e-5, epsilon=1e-8):
+    m, n = A.shape
+    x = np.zeros(n)                    # Inicialización con ceros
+
+    for i in range(max_iter):
+        W = np.diag(1 / (np.abs(x) + epsilon))
+        Aw = A @ W
+        x_new = W @ np.linalg.lstsq(Aw, y, rcond=None)[0]
+        if np.linalg.norm(x - x_new, 1) < tol:
+            break
+        x = x_new
+
+    return x.tolist()
+```
+
+## Código demodulación aleatoria
+
+```python
+import numpy as np
+
+#* CONSTRUCCIÓN DE LA MATRIZ 'H' QUE ACUMULA 'W' ELEMENTOS EN R BLOQUES
+def build_accumulator_matrix(W, R):
+    block_size = W // R
+    H = np.zeros((R, W))
+    for i in range(R):
+        H[i, i * block_size : (i + 1) * block_size] = 1
+    return H
+
+#* generar la matriz 'Φ = H D F' COMO EL MODELO
+def generate_random_demodulator(W, R, seed=0):
+    np.random.seed(seed)
+    F = np.fft.fft(np.eye(W)) / np.sqrt(W)      # Matriz de Fourier
+    signs = np.random.choice([1, 0], size=W)
+    D = np.diag(signs)
+    H = build_accumulator_matrix(W, R)
+    Phi = np.real(H @ D @ F)                    # Parte real
+    return Phi, F, D, H
 ```
 
 ## Notas
 
 - La matriz \( A \) debe satisfacer propiedades como **RIP** (Restricted Isometry Property) para garantizar reconstrucción exacta.  
 - Para señales no escasas en el dominio original, aplicar transformadas (ej.: FFT) antes de la optimización.
+
+### [Apartado anterior](../Inicio.md)

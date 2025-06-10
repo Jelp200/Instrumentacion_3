@@ -12,20 +12,20 @@ def generate_modulation_matrix(n, m, pseudo_seq=None, sample_indices=None, seed=
     if sample_indices is None:
         sample_indices = np.sort(np.random.choice(np.arange(n), size=m, replace=False))
 
-    A = mod_matrix[sample_indices, :]  # matriz final m x n
+    #* MATRIZ FINAL m x n
+    A = mod_matrix[sample_indices, :]
 
     return A, pseudo_seq, sample_indices
 
-
 def irls(A, y, max_iter=50, tol=1e-5, epsilon=1e-8):
     m, n = A.shape
-    x = np.linalg.pinv(A) @ y
+    #* Inicialización con ceros
+    x = np.zeros(n)
 
     for i in range(max_iter):
         W = np.diag(1 / (np.abs(x) + epsilon))
         Aw = A @ W
         x_new = W @ np.linalg.lstsq(Aw, y, rcond=None)[0]
-
         if np.linalg.norm(x - x_new, 1) < tol:
             break
         x = x_new

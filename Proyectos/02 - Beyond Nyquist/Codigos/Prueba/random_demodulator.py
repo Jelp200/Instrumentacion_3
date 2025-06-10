@@ -16,7 +16,7 @@ def generate_random_demodulator(W, R, seed=0):
     """
     np.random.seed(seed)
     F = np.fft.fft(np.eye(W)) / np.sqrt(W)  # matriz de Fourier
-    signs = np.random.choice([1, -1], size=W)
+    signs = np.random.choice([1, 0], size=W)
     D = np.diag(signs)
     H = build_accumulator_matrix(W, R)
     Phi = np.real(H @ D @ F)  # Usamos la parte real
